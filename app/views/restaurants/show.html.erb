@@ -1,28 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+<h1><%= @restaurant.name %></h1>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
+<div class="list-group">
+  <p class="list-group-item">
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
+  <p class="list-group-item">
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @restaurant.category %>
-</p>
+  <p class="list-group-item">
+    <strong>Phone:</strong>
+    <%= @restaurant.phone_number %>
+  </p>
+
+  <p class="list-group-item">
+    <strong>Category:</strong>
+    <%= @restaurant.category %>
+  </p>
+</div>
 
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-    <strong>Reviews about this restaurant</strong>
+    <strong>Review</strong>
     <li class="list-group-item"><%= review.content %></li>
     <li class="list-group-item"><%= review.rating %> stars!</li>
   <% end %>

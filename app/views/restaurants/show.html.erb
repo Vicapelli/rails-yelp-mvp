@@ -20,5 +20,14 @@
   <%= @restaurant.category %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <strong>Reviews about this restaurant</strong>
+    <li class="list-group-item"><%= review.content %></li>
+    <li class="list-group-item"><%= review.rating %> stars!</li>
+  <% end %>
+</ul>
+
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+
+<%= link_to 'Back', restaurants_path%>
